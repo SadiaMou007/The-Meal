@@ -3,7 +3,9 @@
 }
 body {
   font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
   overflow-x: hidden;
+}
+.nav-icon {
+  font-size: 30px;
+  color: mediumaquamarine;
 }

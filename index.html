@@ -29,43 +29,33 @@
   </head>
   <body class="bg-light">
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-danger mnav">
-        <div class="container-fluid">
-          <a class="navbar-brand text-white ms-5" href="#"
-            ><i class="fa-solid fa-utensils mx-2"></i>The Meal</a
-          >
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav ms-auto me-5">
-              <a class="nav-link active text-white" aria-current="page" href="#"
-                >Home</a
-              >
-              <a class="nav-link text-white" href="#">Features</a>
-            </div>
-          </div>
+      <nav>
+        <div
+          class="d-flex justify-content-center align-items-center mnav bg-danger text-white"
+        >
+          <i class="fa-solid fa-utensils mx-3 nav-icon"></i>
+          <h2>The Meal</h2>
         </div>
       </nav>
     </header>
-    <section class="container mt-4 w-50">
-      <div class="input-group">
+    <section class="container mt-4 row w-50 mx-auto">
+      <div class="input-group col-sm-12 col-md-12">
         <input
           type="text"
           class="form-control"
-          placeholder="Search Food;s"
+          id="search-field"
+          placeholder="Search Food by name"
           aria-label="Recipient's username with two button addons"
         />
-        <button class="btn btn-outline-secondary" type="button">Search</button>
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          onclick="searchbtn()"
+        >
+          Search
+        </button>
       </div>
+      <p id="error" class="text-center text-danger mt-3"></p>
     </section>
     <!-- bootstrap script -->
     <script
