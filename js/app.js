@@ -1,7 +1,9 @@
 // get search result
+
 const searchbtn = () => {
-  const searchId = document.getElementById("search-field");
   const error = document.getElementById("error");
+
+  const searchId = document.getElementById("search-field");
   const searchtext = parseInt(searchId.value);
   //error handle
   if (searchId.value == "") {
@@ -15,7 +17,8 @@ const searchbtn = () => {
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchId.value}`;
     fetch(url)
       .then((res) => res.json())
-      .then((data) => getMeals(data.meals));
+      .then((data) => getMeals(data.meals))
+      .catch((error) => noDataFound(error));
   }
   searchId.value = "";
 };
@@ -23,13 +26,14 @@ const searchbtn = () => {
 // show search result
 const getMeals = (data) => {
   showTotalItem(data.length);
-  console.log(data.length);
+  // check if no data found
+
   const mealContainer = document.getElementById("mealContainer");
   mealContainer.innerHTML = "";
   for (const meal of data) {
     const div = document.createElement("div");
     div.innerHTML = `
-     <div class="col" onclick="loaddetail(${meal.idMeal})">
+     <div class="col cursor" onclick="loaddetail(${meal.idMeal})">
          <div class="card">
              <img src="${meal.strMealThumb}" class="card-img-top" alt="...">
              <div class="card-body">
@@ -99,4 +103,10 @@ const closeDetails = () => {
 const showTotalItem = (values) => {
   const text = `Total Item: ${values}`;
   error.innerText = text;
+};
+// extra no data found
+const noDataFound = (error) => {
+  const errorId = document.getElementById("error");
+  errorId.innerText = "";
+  errorId.innerText = "No Meal Found!!!";
 };

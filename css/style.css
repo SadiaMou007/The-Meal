@@ -25,3 +25,11 @@ body {
 .closeIcon:hover {
   color: red;
 }
+.cursor {
+  transition: transform 1s; /* Animation */
+}
+.cursor :hover {
+  cursor: pointer;
+  transform: scale(1.01);
+  opacity: 75%;
+}
