@@ -30,6 +30,7 @@ body {
 }
 .cursor :hover {
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
   transform: scale(1.01);
   opacity: 75%;
 }

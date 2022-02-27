@@ -109,4 +109,6 @@ const noDataFound = (error) => {
   const errorId = document.getElementById("error");
   errorId.innerText = "";
   errorId.innerText = "No Meal Found!!!";
+  const mealContainer = document.getElementById("mealContainer");
+  mealContainer.innerHTML = "";
 };
